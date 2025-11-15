@@ -1,0 +1,86 @@
+
+.cat1,.cat2,.cat3{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 450px;
+}
+.categorycontainer {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    
+
+}
+.imgbox img {
+    object-fit: cover;
+    height: 250px;
+    width:100%;
+    border-radius: 20px;
+    box-shadow: rgb(18, 18, 18) 1px 1px 10px;
+    transition: box-shadow 0.5s linear;
+
+}
+.cat1 img:hover {
+    box-shadow:rgb(255, 255, 255) 2px 3px 50px ;
+}
+.cat2 img:hover {
+    box-shadow:rgb(4, 255, 12) 2px 3px 50px ;
+}
+.cat3 img:hover {
+    box-shadow:rgb(0, 204, 255) 2px 3px 50px ;
+}
+.imgbox{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    transition: transform 0.5s linear;
+}
+.imgbox:hover{
+    transform:scale(1.05);
+   
+}
+
+.cat1 .imgbox p {
+    transition: color 1s ease-in-out;
+}
+.cat1 .imgbox:hover p {
+    color: rgb(255, 255, 255);
+}
+.cat2 .imgbox p {
+    transition: color 1s ease-in-out;
+}
+.cat2 .imgbox:hover p {
+    color: rgb(4, 255, 12);
+}
+.cat3 .imgbox p {
+    transition: color 1s ease-in-out;
+}
+.cat3 .imgbox:hover p {
+    color: rgb(0, 204, 255);
+}
+
+
+
+@media (max-width: 1024px) {
+    .categorycontainer {
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .cat1, .cat2, .cat3 {
+        width: 400px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .categorycontainer {
+        flex-direction: column; 
+        align-items: center;
+    }
+    .cat1, .cat2, .cat3 {
+        width: 95%; 
+    }
+}

@@ -1,0 +1,124 @@
+.accsection{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border:  1px solid black;
+    width: 60%;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 0px 3px 5px black;
+    border-radius: 5px;
+
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+
+}
+details{
+    background-color: rgb(24, 207, 146);
+    padding: 15px;
+    box-shadow: 0px 3px 5px black;
+
+}
+details:nth-child(odd){
+    background-color: rgb(143, 243, 210);
+
+}
+details summary{
+    cursor: pointer;
+    font-weight: bolder;
+    padding: 5px;
+}
+details summary:hover{
+    text-decoration: underline;
+}
+details[open] p {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* for carousel video used = "https://www.youtube.com/watch?v=gmI5nvzv170"  */
+
+.carousel{
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+    margin-top: 50px;
+    padding: 30px;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+    anchor-name: --carousel;
+
+}
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+.carousel::scroll-button(right){
+    content: '>';
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    height: 63px;
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --carousel;
+    position-area: right center;
+    translate: -90%;
+
+
+}
+.carousel::scroll-button(left){
+    content: '<';
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    height: 63px;
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --carousel;
+    position-area: left center;
+    translate: 90%;
+
+}
+.carousel::scroll-button(right):disabled,.carousel::scroll-button(left):disabled{
+    display: none;
+    cursor: auto;
+}
+.carousel img{
+    object-fit: cover;
+    object-position: center;
+    height: 350px;
+    flex: 0 0 22em;
+    box-shadow: 0px 3px 5px black;
+}
+
+
+@media (max-width: 768px) {
+    .accsection {
+        width: 95%; 
+        padding: 10px;
+    }
+    .carousel img {
+        flex-basis: 18em; 
+        height: 300px;
+    }
+    .carousel::scroll-button(right),
+    .carousel::scroll-button(left) {
+        display: none;
+    }
+}
+
