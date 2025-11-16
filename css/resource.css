@@ -44,11 +44,11 @@
 }
 
 
-li a{
+.content li a{
     text-decoration:none;
     font-size: 18px;
 }
-li a:hover {
+.content li a:hover {
     color: white;
     text-decoration: underline rgb(255, 255, 255);
 }
